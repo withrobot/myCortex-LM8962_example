@@ -1,0 +1,59 @@
+
+Withrobot Co.
+http://withrobot.com
+
+== 20101115 ==
+- boot_loader downloading address is changed from 0x0800 to 0x1000.
+- Update Eclipse workspace settings for HELIOS version.
+- Add adc2 example.
+- Redraw example schemetics.
+- Fix OpenOCD programming script bug in pwmgen, QEI_encoder example
+  [myCortex-LM8962 only]
+- Add check.bat script
+
+== 20091029 ==
+- Compiler/eclipse/StellarisWare/OpenOCD update
+- Change board IP address(from 192.168.12.219 to 192.168.30.2) in
+  enet_thermometer example[myCortex-LM8962 only]
+- Add "-fno-strict-aliasing" flag to enet_thermometer example
+  [myCortex-LM8962 only]
+- Fix compiler warnings in enet_thermometer example[myCortex-LM8962 only]
+- Add HTML header information in httpd of enet_thermometer example
+  [myCortex-LM8962 only]
+
+== 20090317 ==
+- Add ex_math example
+- Add QEI_encoder example[myCortex-LM8962 only]
+- Fix Timer Interrupt constant misuse in timer example.
+- Fix a drawing in i2c_myAccel3LV02 example.
+- Modify Makefiles : link math library together
+
+== 20081116 ==
+- Modify example's Makefiles and some source files for DriverLib ver 3618.
+- Add SimpleAngleMeter example.
+- Add i2c_myAccel3LV02 example.
+- Add ccp_pwm example[myCortex-LMx08 only]
+- Add SoftwareReset example.
+- Fix a bug of .ld file in GPIOInterrupt example.
+- Modify SPI CS pin in spi_myAccel3LV02 example as PD5->PD0
+- Upgrade compiler to CodeSourcery G++ Lite 2008q3(arm-2008q3-39-arm-none-eabi)
+
+== 20081005 ==
+- Add spi_myAccel3LV02 example.
+- Modify ROOT variable definition in Makefile.conf.
+- Add lwiplib_server example[myCortex-LM8962 only].
+- Add lwiplib_client example[myCortex-LM8962 only].
+- Update makefile.def. No longer generate fault dependency file.
+- Change the way to create dependency information in Makefile.conf.
+
+== 20080823 ==
+- Revision workspace settings for eclipse ganymede.
+
+== 20080725 ==
+- Add ethernet example[myCortex-LM8962 only].
+- Add helper header files in include folder.
+	- led.h : supporting LED usage.
+	- switch.h : supporting push button switch on board.
+
+== 20080612 ==
+- First release.
