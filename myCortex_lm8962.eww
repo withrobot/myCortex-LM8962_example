@@ -7,6 +7,9 @@
   <project>
     <path>$WS_DIR$\boot_loader\boot_loader.ewp</path>
   </project>
+  <project>
+    <path>$WS_DIR$\timer\timer.ewp</path>
+  </project>
   <batchBuild/>
 </workspace>
 
