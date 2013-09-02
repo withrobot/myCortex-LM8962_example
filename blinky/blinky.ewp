@@ -699,11 +699,11 @@
         </option>
         <option>
           <name>IlinkIcfOverride</name>
-          <state>0</state>
+          <state>1</state>
         </option>
         <option>
           <name>IlinkIcfFile</name>
-          <state>$TOOLKIT_DIR$\config\linker\TexasInstruments\LM3S8962.icf</state>
+          <state>C:\StellarisWare\examples\myCortex-LM8962_work\common\myCortex-LM8962.icf</state>
         </option>
         <option>
           <name>IlinkIcfFileSlave</name>
@@ -937,6 +937,9 @@
   </configuration>
   <group>
     <name>Common</name>
+    <file>
+      <name>$PROJ_DIR$\..\common\myCortex-LM8962.icf</name>
+    </file>
     <file>
       <name>$PROJ_DIR$\..\common\startup_ewarm.c</name>
     </file>
