@@ -4,6 +4,9 @@
   <project>
     <path>$WS_DIR$\blinky\blinky.ewp</path>
   </project>
+  <project>
+    <path>$WS_DIR$\boot_loader\boot_loader.ewp</path>
+  </project>
   <batchBuild/>
 </workspace>
 
