@@ -301,6 +301,7 @@
           <state>$PROJ_DIR$\..\..\..</state>
           <state>$PROJ_DIR$\..\..\..\inc</state>
           <state>$PROJ_DIR$\..\..\..\driverlib</state>
+          <state>$PROJ_DIR$\..\..\..\utils</state>
           <state>$PROJ_DIR$\..\common</state>
         </option>
         <option>
@@ -588,7 +589,7 @@
         </option>
         <option>
           <name>OOCOutputFile</name>
-          <state>timer.bin</state>
+          <state>adc.bin</state>
         </option>
         <option>
           <name>OOCCommandLineProducer</name>
@@ -1237,6 +1238,7 @@
           <state>$PROJ_DIR$\..\..\..</state>
           <state>$PROJ_DIR$\..\..\..\inc</state>
           <state>$PROJ_DIR$\..\..\..\driverlib</state>
+          <state>$PROJ_DIR$\..\..\..\utils</state>
           <state>$PROJ_DIR$\..\common</state>
         </option>
         <option>
@@ -1524,7 +1526,7 @@
         </option>
         <option>
           <name>OOCOutputFile</name>
-          <state>timer.bin</state>
+          <state>adc.bin</state>
         </option>
         <option>
           <name>OOCCommandLineProducer</name>
@@ -1889,7 +1891,13 @@
   <group>
     <name>Source</name>
     <file>
-      <name>$PROJ_DIR$\timer.c</name>
+      <name>$PROJ_DIR$\adc.c</name>
+    </file>
+  </group>
+  <group>
+    <name>Utils</name>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\utils\ustdlib.c</name>
     </file>
   </group>
 </project>

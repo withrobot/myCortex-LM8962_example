@@ -2,6 +2,9 @@
 
 <workspace>
   <project>
+    <path>$WS_DIR$\adc\adc.ewp</path>
+  </project>
+  <project>
     <path>$WS_DIR$\blinky\blinky.ewp</path>
   </project>
   <project>
