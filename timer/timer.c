@@ -79,7 +79,7 @@ int main(void)
 }
 
 static void TimerIntHandler(void)
-        {
+{
     // Clear interrupt flag
     TimerIntClear( TIMER0_BASE, TIMER_TIMA_TIMEOUT );
 

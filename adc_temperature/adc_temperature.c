@@ -23,17 +23,19 @@
 //
 //*****************************************************************************
 
+#include <stdio.h>
 #include <string.h>
 
 #include "hw_types.h"
 #include "hw_memmap.h"
 
+#include "sysctl.h"
 #include "gpio.h"
 #include "adc.h"
-#include "uart.h"
 #include "timer.h"
 
-#include "ustdlib.h"
+#include "llio.h"
+
 
 #ifdef DEBUG
 void
@@ -44,13 +46,12 @@ __error__(char *pcFilename, unsigned long ulLine)
 
 #define BUFFER_LEN      32
 
-static void UARTSend(const char *pucBuffer, unsigned long ulCount);
 
 int main(void)
 {
     unsigned long adc_result[16];
     unsigned long cnt;
-    char buffer[BUFFER_LEN];
+    float temperature;
 
     //
     // Set the clocking to run directly from the crystal.
@@ -58,15 +59,12 @@ int main(void)
     SysCtlClockSet(SYSCTL_SYSDIV_1 | SYSCTL_USE_OSC | SYSCTL_OSC_MAIN |
                    SYSCTL_XTAL_8MHZ);
 
+
     //
-    // Configure UART to transmit ADC results
+    // Configure low-level I/O to use printf()
     //
-    SysCtlPeripheralEnable(SYSCTL_PERIPH_UART0);
-    SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOA);
-    GPIOPinTypeUART(GPIO_PORTA_BASE, GPIO_PIN_0 | GPIO_PIN_1);
-    UARTConfigSetExpClk(UART0_BASE, SysCtlClockGet(), 115200,
-                        (UART_CONFIG_WLEN_8 | UART_CONFIG_STOP_ONE |
-                         UART_CONFIG_PAR_NONE));
+    llio_init(115200);
+
 
     //
     // Configure ADC
@@ -90,6 +88,9 @@ int main(void)
     TimerLoadSet( TIMER0_BASE, TIMER_A, SysCtlClockGet() / 2 );     // 2Hz trigger
     TimerEnable( TIMER0_BASE, TIMER_A );
 
+
+    printf("\r\n\r\nADC Temperature Sensor Example\r\n");
+
     //
     // Loop forever.
     //
@@ -97,27 +98,14 @@ int main(void)
     {
         while(!ADCIntStatus(ADC_BASE, 0, false));
         ADCIntClear(ADC_BASE, 0);
-        cnt = ADCSequenceDataGet(ADC_BASE, 0, adc_result);
+        cnt = ADCSequenceDataGet(ADC_BASE, 0, adc_result);      // Read ADC result
         if (cnt == 1)
         {
-            usnprintf(buffer, BUFFER_LEN, "%d\r\n", adc_result[0]);
-            buffer[BUFFER_LEN - 1] = 0;
-            UARTSend(buffer, strlen(buffer));
-        }
-    }
-}
+            // Calculate temperature
+            temperature = (2.7 - (float)adc_result[0] * 3.0 / 1024.) * 75. - 55.;
 
-static void UARTSend(const char *pucBuffer, unsigned long ulCount)
-{
-    //
-    // Loop while there are more characters to send.
-    //
-    while(ulCount--)
-    {
-        //
-        // Write the next character to the UART.
-        //
-        UARTCharPut(UART0_BASE, *pucBuffer++);
+            printf("%d, %.1f[degC]\r\n", adc_result[0], temperature);
+        }
     }
 }
 
