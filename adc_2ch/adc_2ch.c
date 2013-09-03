@@ -44,7 +44,6 @@ __error__(char *pcFilename, unsigned long ulLine)
 }
 #endif
 
-#define BUFFER_LEN      32
 
 
 static void ADCIntHandler(void);
