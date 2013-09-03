@@ -589,7 +589,7 @@
         </option>
         <option>
           <name>OOCOutputFile</name>
-          <state>adc.bin</state>
+          <state>adc_temperature.bin</state>
         </option>
         <option>
           <name>OOCCommandLineProducer</name>
@@ -643,7 +643,7 @@
         </option>
         <option>
           <name>IlinkOutputFile</name>
-          <state>blinky.out</state>
+          <state>$PROJ_FNAME$.out</state>
         </option>
         <option>
           <name>IlinkDebugInfoEnable</name>
@@ -1526,7 +1526,7 @@
         </option>
         <option>
           <name>OOCOutputFile</name>
-          <state>adc.bin</state>
+          <state>adc_temperature.bin</state>
         </option>
         <option>
           <name>OOCCommandLineProducer</name>
@@ -1580,7 +1580,7 @@
         </option>
         <option>
           <name>IlinkOutputFile</name>
-          <state>blinky.out</state>
+          <state>$PROJ_FNAME$.out</state>
         </option>
         <option>
           <name>IlinkDebugInfoEnable</name>
@@ -1891,7 +1891,7 @@
   <group>
     <name>Source</name>
     <file>
-      <name>$PROJ_DIR$\adc.c</name>
+      <name>$PROJ_DIR$\adc_temperature.c</name>
     </file>
   </group>
   <group>

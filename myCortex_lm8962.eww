@@ -2,7 +2,7 @@
 
 <workspace>
   <project>
-    <path>$WS_DIR$\adc\adc.ewp</path>
+    <path>$WS_DIR$\adc_temperature\adc_temperature.ewp</path>
   </project>
   <project>
     <path>$WS_DIR$\blinky\blinky.ewp</path>
