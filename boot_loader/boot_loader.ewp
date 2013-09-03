@@ -643,7 +643,7 @@
         </option>
         <option>
           <name>IlinkOutputFile</name>
-          <state>boot_serial.out</state>
+          <state>$PROJ_FNAME$.out</state>
         </option>
         <option>
           <name>IlinkDebugInfoEnable</name>

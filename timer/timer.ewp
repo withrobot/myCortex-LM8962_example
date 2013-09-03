@@ -642,7 +642,7 @@
         </option>
         <option>
           <name>IlinkOutputFile</name>
-          <state>blinky.out</state>
+          <state>$PROJ_FNAME$.out</state>
         </option>
         <option>
           <name>IlinkDebugInfoEnable</name>
@@ -1578,7 +1578,7 @@
         </option>
         <option>
           <name>IlinkOutputFile</name>
-          <state>blinky.out</state>
+          <state>$PROJ_FNAME$.out</state>
         </option>
         <option>
           <name>IlinkDebugInfoEnable</name>
