@@ -22,6 +22,12 @@
   <project>
     <path>$WS_DIR$\timer\timer.ewp</path>
   </project>
+  <project>
+    <path>$WS_DIR$\uart_echo\uart_echo.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\uart_echo_interrupt\uart_echo_interrupt.ewp</path>
+  </project>
   <batchBuild/>
 </workspace>
 
