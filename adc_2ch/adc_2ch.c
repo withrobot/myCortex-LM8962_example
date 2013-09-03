@@ -1,6 +1,6 @@
 //*****************************************************************************
 //
-// adc_temperature.c - Example main source file
+// adc_2ch.c - Example main source file
 //
 // Copyright (c) 2003-2010 Withrobot, Inc.  All rights reserved.
 //
@@ -47,6 +47,8 @@ __error__(char *pcFilename, unsigned long ulLine)
 #define BUFFER_LEN      32
 
 
+static void ADCIntHandler(void);
+
 int main(void)
 {
     unsigned long adc_result[16];
@@ -72,10 +74,16 @@ int main(void)
     SysCtlPeripheralEnable(SYSCTL_PERIPH_ADC);
     SysCtlADCSpeedSet(SYSCTL_ADCSPEED_500KSPS);
 
+    // ADC sequence #0 - setup with 2 conversions
     ADCSequenceDisable(ADC_BASE, 0);
     ADCSequenceConfigure(ADC_BASE, 0, ADC_TRIGGER_TIMER, 0);
+    ADCIntRegister(ADC_BASE, 0, ADCIntHandler);
+    ADCIntEnable(ADC_BASE, 0);
 
-    ADCSequenceStepConfigure(ADC_BASE, 0, 0, ADC_CTL_TS | ADC_CTL_IE | ADC_CTL_END);
+    // sequence step 0 - channel 0
+    ADCSequenceStepConfigure(ADC_BASE, 0, 0, ADC_CTL_CH0);
+    // sequence step 1 - internal temperature sensor. Generate Interrupt & End of Sequence
+    ADCSequenceStepConfigure(ADC_BASE, 0, 1, ADC_CTL_TS | ADC_CTL_IE | ADC_CTL_END);
 
     ADCSequenceEnable(ADC_BASE, 0);
 
@@ -89,23 +97,26 @@ int main(void)
     TimerEnable( TIMER0_BASE, TIMER_A );
 
 
-    printf("\r\n\r\nADC Temperature Sensor Example\r\n");
+    printf("\r\n\r\nADC 2 Channel Example\r\n");
 
     //
     // Loop forever.
     //
     while(1)
     {
-        while(!ADCIntStatus(ADC_BASE, 0, false));
-        ADCIntClear(ADC_BASE, 0);
-        cnt = ADCSequenceDataGet(ADC_BASE, 0, adc_result);      // Read ADC result
-        if (cnt == 1)
+        cnt = ADCSequenceDataGet(ADC_BASE, 0, adc_result);
+        if (cnt == 2)
         {
             // Calculate temperature
-            temperature = (2.7 - (float)adc_result[0] * 3.0 / 1024.) * 75. - 55.;
+            temperature = (2.7 - (float)adc_result[1] * 3.0 / 1024.) * 75. - 55.;
 
-            printf("%d, %.1f[degC]\r\n", adc_result[0], temperature);
+            printf("%d,%d,%.1f\r\n", adc_result[0], adc_result[1], temperature);
         }
+        SysCtlSleep();
     }
 }
 
+static void ADCIntHandler(void)
+{
+    ADCIntClear(ADC_BASE, 0);
+}

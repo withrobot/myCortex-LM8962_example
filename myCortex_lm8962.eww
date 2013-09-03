@@ -2,6 +2,9 @@
 
 <workspace>
   <project>
+    <path>$WS_DIR$\adc_2ch\adc_2ch.ewp</path>
+  </project>
+  <project>
     <path>$WS_DIR$\adc_temperature\adc_temperature.ewp</path>
   </project>
   <project>
