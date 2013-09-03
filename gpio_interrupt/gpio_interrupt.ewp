@@ -1879,9 +1879,6 @@
   <group>
     <name>Common</name>
     <file>
-      <name>$PROJ_DIR$\..\common\llio.c</name>
-    </file>
-    <file>
       <name>$PROJ_DIR$\..\common\startup_ewarm.c</name>
     </file>
   </group>
