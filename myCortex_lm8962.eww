@@ -20,6 +20,15 @@
     <path>$WS_DIR$\gpio_interrupt\gpio_interrupt.ewp</path>
   </project>
   <project>
+    <path>$WS_DIR$\printf_scanf\printf_scanf.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\pwm\pwm.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\pwm_dimming\pwm_dimming.ewp</path>
+  </project>
+  <project>
     <path>$WS_DIR$\timer\timer.ewp</path>
   </project>
   <project>
