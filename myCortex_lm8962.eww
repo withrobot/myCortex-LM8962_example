@@ -29,6 +29,9 @@
     <path>$WS_DIR$\pwm_dimming\pwm_dimming.ewp</path>
   </project>
   <project>
+    <path>$WS_DIR$\systick\systick.ewp</path>
+  </project>
+  <project>
     <path>$WS_DIR$\timer\timer.ewp</path>
   </project>
   <project>
