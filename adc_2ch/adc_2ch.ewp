@@ -301,7 +301,6 @@
           <state>$PROJ_DIR$\..\..\..</state>
           <state>$PROJ_DIR$\..\..\..\inc</state>
           <state>$PROJ_DIR$\..\..\..\driverlib</state>
-          <state>$PROJ_DIR$\..\..\..\utils</state>
           <state>$PROJ_DIR$\..\common</state>
         </option>
         <option>
@@ -1238,7 +1237,6 @@
           <state>$PROJ_DIR$\..\..\..</state>
           <state>$PROJ_DIR$\..\..\..\inc</state>
           <state>$PROJ_DIR$\..\..\..\driverlib</state>
-          <state>$PROJ_DIR$\..\..\..\utils</state>
           <state>$PROJ_DIR$\..\common</state>
         </option>
         <option>
@@ -1526,7 +1524,7 @@
         </option>
         <option>
           <name>OOCOutputFile</name>
-          <state>adc_temperature.bin</state>
+          <state>adc_2ch.bin</state>
         </option>
         <option>
           <name>OOCCommandLineProducer</name>
