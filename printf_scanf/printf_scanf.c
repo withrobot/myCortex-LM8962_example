@@ -75,18 +75,14 @@ int main(void)
     //
     while(1)
     {
-        if (UARTCharsAvail(UART0_BASE))
+        if (scanf("%d", &n) == 1)
         {
-            if (scanf("%d", &n) == 1)
-            {
-                printf("%d is entered.\r\n", n);
+            printf("%d is entered.\r\n", n);
 
-                printf("\r\nEnter any number...\r\n");
-            }
-            else
-                scanf("%s", buff);      // flush read FIFO
-
+            printf("\r\nEnter any number...\r\n");
         }
+        else
+            scanf("%s", buff);      // flush read FIFO
     }
 }
 
