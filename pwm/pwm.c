@@ -43,7 +43,7 @@ int main(void)
     unsigned long period;
 
     //
-    // Set the clocking to run directly from the crystal.
+    // Set the clocking to use PLL
     //
     SysCtlClockSet(SYSCTL_SYSDIV_4 | SYSCTL_USE_PLL | SYSCTL_OSC_MAIN |
                    SYSCTL_XTAL_8MHZ);
