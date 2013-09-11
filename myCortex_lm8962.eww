@@ -23,6 +23,9 @@
     <path>$WS_DIR$\gpio_interrupt\gpio_interrupt.ewp</path>
   </project>
   <project>
+    <path>$WS_DIR$\i2c_myARS-USB\i2c_myARS-USB.ewp</path>
+  </project>
+  <project>
     <path>$WS_DIR$\printf_scanf\printf_scanf.ewp</path>
   </project>
   <project>
