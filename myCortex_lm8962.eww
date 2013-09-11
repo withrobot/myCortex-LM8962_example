@@ -43,6 +43,9 @@
   <project>
     <path>$WS_DIR$\uart_echo_interrupt\uart_echo_interrupt.ewp</path>
   </project>
+  <project>
+    <path>$WS_DIR$\uart_myARS-USB\uart_myARS-USB.ewp</path>
+  </project>
   <batchBuild/>
 </workspace>
 
