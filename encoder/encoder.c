@@ -1,6 +1,6 @@
 //*****************************************************************************
 //
-// systick.c - SysTick timer example main source file
+// encoder.c - Quadrature Encoder Interface example main source file
 //
 // Copyright (c) 2003-2013 Withrobot, Inc.  All rights reserved.
 //
