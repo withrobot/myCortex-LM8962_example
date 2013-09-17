@@ -17,6 +17,9 @@
     <path>$WS_DIR$\encoder\encoder.ewp</path>
   </project>
   <project>
+    <path>$WS_DIR$\enet_thermometer\enet_thermometer.ewp</path>
+  </project>
+  <project>
     <path>$WS_DIR$\gpio\gpio.ewp</path>
   </project>
   <project>
