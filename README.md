@@ -5,5 +5,5 @@ myCortex-LM8962_example
 
 홈페이지 : http://withrobot.com
 
-본 예제 소스코드에 관한 설명과 사용방법은 우측 메뉴의 [Wiki 페이지](wiki/)를 참조하시기 바랍니다.
+본 예제 소스코드에 관한 설명과 사용방법은 우측 메뉴의 [Wiki 페이지](https://github.com/withrobot/myCortex-LM8962_example/wiki)를 참조하시기 바랍니다.
 
