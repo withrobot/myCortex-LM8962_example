@@ -2,6 +2,19 @@
 Withrobot Co.
 http://withrobot.com
 
+
+== v1.0 ==
+20130926
+- 개발 환경을 eclipse 기반에서 IAR EWARM 기반으로 변경하여 재구성
+- github 기반 소스 관리
+
+
+
+
+*******************************************************************************
+*******************************************************************************
+이하는 eclipse 기반 개발환경용 예제 소스의 release history.
+
 == 20101115 ==
 - boot_loader downloading address is changed from 0x0800 to 0x1000.
 - Update Eclipse workspace settings for HELIOS version.
