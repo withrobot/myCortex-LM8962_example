@@ -32,7 +32,6 @@
 #include "hw_memmap.h"
 
 #include "sysctl.h"
-#include "uart.h"
 
 #include "llio.h"
 
