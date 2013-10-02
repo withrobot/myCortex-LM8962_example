@@ -1,6 +1,6 @@
 //*****************************************************************************
 //
-// pwm.c - PWM generation example main source file
+// pwm_dimming.c - PWM generation example main source file
 //
 // Copyright (c) 2003-2013 Withrobot, Inc.  All rights reserved.
 //
