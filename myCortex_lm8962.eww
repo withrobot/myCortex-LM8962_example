@@ -38,6 +38,9 @@
     <path>$WS_DIR$\pwm\pwm.ewp</path>
   </project>
   <project>
+    <path>$WS_DIR$\pwm_ccp_dimming\pwm_ccp_dimming.ewp</path>
+  </project>
+  <project>
     <path>$WS_DIR$\pwm_dimming\pwm_dimming.ewp</path>
   </project>
   <project>
