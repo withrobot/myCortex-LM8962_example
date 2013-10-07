@@ -104,7 +104,7 @@ static void VR_Init()
     SysCtlPeripheralEnable(SYSCTL_PERIPH_TIMER1);
     TimerConfigure( TIMER1_BASE, TIMER_CFG_32_BIT_PER );
     TimerControlTrigger(TIMER1_BASE, TIMER_A, true);
-    TimerLoadSet( TIMER1_BASE, TIMER_A, SysCtlClockGet() / 100 );     // 1kHz control loop
+    TimerLoadSet( TIMER1_BASE, TIMER_A, SysCtlClockGet() / 100 );     // 100Hz control loop
     TimerEnable( TIMER1_BASE, TIMER_A );
 
 }
