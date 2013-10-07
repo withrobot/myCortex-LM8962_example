@@ -23,15 +23,12 @@
 //
 //*****************************************************************************
 
-#include <stdio.h>
 #include "hw_types.h"
 #include "hw_memmap.h"
 #include "sysctl.h"
 #include "timer.h"
 #include "gpio.h"
 #include "adc.h"
-
-#include "llio.h"
 
 #define PWM_FREQUENCY 25000
 #define PWM_MAX_DUTY 1000
@@ -60,8 +57,6 @@ int main(void)
     //
 	SysCtlClockSet(SYSCTL_SYSDIV_4 | SYSCTL_USE_PLL | SYSCTL_OSC_MAIN |
                    SYSCTL_XTAL_8MHZ);
-
-    llio_init(115200);
 
     //
     // Initialize Timer CCP module for PWM
@@ -129,7 +124,6 @@ static void ADCIntHandler(void)
         duty = adc_result[0] * PWM_MAX_DUTY / 1023;        // calculate duty ratio
 
         PWM_SetDuty(duty);                              // Set PWM duty
-        printf("%d\r\n", adc_result[0]);
     }
 }
 
