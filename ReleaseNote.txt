@@ -2,6 +2,11 @@
 Withrobot Co.
 http://withrobot.com
 
+== v1.1 ==
+20131008
+- pwm_ccp_dimming 예제 추가
+- github wiki 페이지(https://github.com/withrobot/myCortex-LM8962_example/wiki)
+  설명과 일치하도록 자잘한 수정 및 오타 정정
 
 == v1.0 ==
 20130926
