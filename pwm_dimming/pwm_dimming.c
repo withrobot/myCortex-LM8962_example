@@ -89,7 +89,7 @@ int main(void)
     SetPWMDuty(25);
 
     //
-    // Enable the PWM0 and PWM1 output signals.
+    // Enable the PWM0 output signals.
     //
     PWMOutputState(PWM_BASE, PWM_OUT_0_BIT, true);
 
