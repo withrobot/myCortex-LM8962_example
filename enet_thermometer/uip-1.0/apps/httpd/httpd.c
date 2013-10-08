@@ -63,6 +63,7 @@
 struct httpd_state *hs;
 
 extern unsigned long g_temp;
+extern unsigned long g_runtime;
 
 //*****************************************************************************
 //
@@ -91,15 +92,15 @@ static const char default_page_header[] =
   "</head>"
   "<body>"
     "This web page is served by a small web server running on top of "
-    "the <a href=\"http://www.sics.se/~adam/uip/\">uIP embedded TCP/IP "
+    "the <a href=\"https://github.com/adamdunkels/uip/wiki\">uIP embedded TCP/IP "
     "stack</a>."
     "<hr>"
-	"이 웹페이지는 <a href=\"http://withrobot.com\">withrobot Co.</a>에서 제작한  myCortex-LM8962 개발보드에서 서비스되고 있습니다.<br>"
-	"This web page is served by myCortex-LM8962 Dev. board which is manufactured by <a href=\"http://withrobot.com\">withrobot Co.</a>."
-	"<hr>"
-    "현재 온도는 섭씨 ";
+	"이 웹페이지는 <a href=\"http://withrobot.com\">withrobot Inc.</a>에서 제작한  myCortex-LM8962 개발보드에서 서비스되고 있습니다.<br>"
+	"This web page is served by myCortex-LM8962 Dev. board which is manufactured by <a href=\"http://withrobot.com\">withrobot Inc.</a>."
+	"<hr>";
+//    "현재 온도는 섭씨 ";
 static const char default_page_footer[] =
-                                   " 도 입니다."
+//                                   " 도 입니다."
   "</body>"
 "</html>";
 //static const char default_page_buf_footer[] =
@@ -206,15 +207,8 @@ httpd_appcall(void)
                 hs->count++;
                 if(hs->count == 1)
                 {
-                	char buffer[16];
-                	snprintf(buffer, 16, "%d.%d", g_temp/100, g_temp%100);
-//                	buffer[0] = '3';
-//                	buffer[1] = '0';
-//                	buffer[2] = '.';
-//                	buffer[3] = '5';
-//                	buffer[4] = 0;
-
-                	buffer[15] = 0;
+                	char buffer[128];
+                	snprintf(buffer, 128, "현재 MCU 코어 온도는 섭씨 %d.%d도 입니다.<br>현재 %d초(=%.3f일) 동안 연속 운영중입니다.", g_temp/100, g_temp%100, g_runtime, (float)g_runtime/86400.);
                     uip_send(buffer, strlen(buffer));
                 }
                 else if(hs->count == 2)

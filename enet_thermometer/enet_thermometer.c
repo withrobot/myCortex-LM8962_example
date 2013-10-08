@@ -34,9 +34,9 @@
  *
  * 사용하기를 원하는 IP 주소를 설정하고 컴파일 한 펌웨어를 myCortex-LM8962 개발 보드에 다운
  * 로드한 다음 이더넷 케이블을 J3에 연결하고 전원을 인가한다. 설정한 IP 주소를 이용하여 PC에서
- * 인터넷 브라우저로 접속한다. 예를 들어 IP를 192.168.12.219로 설정했다면 아래 주소로 접속한
+ * 인터넷 브라우저로 접속한다. 예를 들어 IP를 192.168.10.175로 설정했다면 아래 주소로 접속한
  * 다.
- * 			http://192.168.12.219
+ * 			http://192.168.10.175
  * 인터넷 브라우저에 몇줄의 텍스트가 출력되고 현재 온도를 읽을 수 있으면 정상 동작하는 것이다.
  */
 
@@ -110,7 +110,8 @@ static volatile long lARPTimer;
 
 
 volatile long g_temp;           // 현재 온도.
-
+static unsigned long g_tick;    // tick count
+unsigned long g_runtime;        // 시스템 런타임
 
 
 
@@ -416,6 +417,13 @@ static void SysTickIntHandler(void)
     // SysTick timer는 100Hz 주기로 설정되어 있으므로 10ms 간격으로 인터럽트 발생.
     lPeriodicTimer += 10;
     lARPTimer += 10;
+
+    g_tick++;
+
+    if (g_tick % 100 == 0)      // 1초 경과
+    {
+        g_runtime++;
+    }
 
 }
 
